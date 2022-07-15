@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=poppins:200,300,400,500,600,700,800,900&display=swap');
+.background{
+background-blend-mode: lighten;
+}
+.a{
+    color: #fff;
+}
+
+.content
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.content .textBox 
+{
+    position: relative;
+    max-width: 700px
+}
+.content .textBox h2
+{
+color:black;
+font-size: 4em;
+line-height: 1.5em;
+font-weight: 800;
+text-transform: uppercase;
+}
+.content .textBox h2 span{
+    font-size: 1em;
+}
+.content .textBox p{
+    color: black;
+}
+
+.content .textBox a{
+    display:inline-block;
+    margin-bottom: 20px;
+    padding: 8px 20px;
+    background: black;
+
+    color:white;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.content .a .left{
+    margin-left: 50px;
+}
+.contents
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+   
+}
+.contents .textBox 
+{    
+   
+    
+    position: relative;
+    max-width: 700px;
+    border:3rem ;
+  
+}
+.contents .textBox h4
+{
+color:black;
+font-size: 4em;
+line-height: 1.5em;
+font-weight: 600;
+text-transform: uppercase;
+
+}
+.contents .textBox h4 span{
+    font-size: 1em;
+}
+.contents .textBox p{
+    color: black;
+}
+.contents .textBox a{
+    display:inline-block;
+    margin-bottom: 20px;
+    padding: 8px 20px;
+    background: black;
+    color:white;
+    border-radius: 74px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+}
+.ok .check{
+  border-top: 20px;
+}
