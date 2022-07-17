@@ -96,35 +96,3 @@ text-transform: uppercase;
     text-transform: uppercase;
 
 }
-@media screen and (max-width : 664px){
-    .content .textBox h2{
-        font-size: 2rem;
-    }
-    .content .textBox a{
-        font-size: 15px;
-    }
-}
-
-@media screen and (max-width :458px){
-    .content .textBox h2{
-        font-size: 2.0rem;
-    }
-    .content .textBox a{
-        font-size: 13px;
-    }
-    .content .textBox p{
-        font-size: 13px;
-    }
-    .content .textBox a{
-        font-size: 11px;
-        margin-bottom: 10px;
-    }
-}
-
-.footer{
-    position: absolute;
-    bottom: 0%;
-    left: 0%;
-    right: 0%;
-
-}
