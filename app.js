@@ -1,17 +1,27 @@
 //<a class="navbar-brand" href="#">Smart Notes</a>
-
+//<li onclick="deleteNote(${index})"><i class="uil uil-trash"></i>Delete</li> 
+//<li onclick="editNote(${index})"><i class="uil uil-pen"></i>Edit</li> 
+// <td><li id="${index}" onclick="editNote(this.id)"><i class="fas fa-edit"></i></li></td>
+//<li id="${index}" onclick="deleteNote(this.id)"><i class="fas fa-trash-alt"></i></li>
 console.log("Welcome to smart note app.");
 showNotes();
+const months = ["January", "February", "March", "April", "May", "June", "July",
+              "August", "September", "October", "November", "December"];
 
 let addBtn = document.getElementById('addBtn');
 let addTxt = document.getElementById("addTxt");
 let addTitle = document.getElementById("addTitle");
 addBtn.addEventListener("click", function (e) {
   
+    
 
     if (addTitle.value=="" || addTxt.value == "") {
         return alert('Empty Note !! please "Add a Note" or a "Title" first. ')
     }
+    let dateObj = new Date(),
+    month = months[dateObj.getMonth()],
+    day = dateObj.getDate(),
+    year = dateObj.getFullYear();
     let notes = localStorage.getItem("notes");
     if (notes == null) {
         notesObj = [];
@@ -21,7 +31,8 @@ addBtn.addEventListener("click", function (e) {
     }
     let myObj = {
         title:addTitle.value,
-        text:addTxt.value
+        text:addTxt.value,
+        date: `${month} ${day}, ${year}`,
     }
     // notesObj.push(addTxt.value);
     notesObj.push(myObj);
@@ -43,16 +54,24 @@ function showNotes() {
     let html = "";
     notesObj.forEach(function (element, index) {
         html += `
-        <div class="noteCard my-2 mx-2 card" style="width: 18rem;">
-                <div class="card-body">
-                 <h5 class="card-title text-dark">${element.title}</h5>
-                    <p class="card-text ">${element.text}</p>
-                    <div className="btnstyle d-flex ">
-                    <button id="${index}" onclick="deleteNote(this.id)" class="btn btn-success text-light">Delete</button>
-                    <button id="${index}" onclick="editNote(this.id)" class="btn btn-success text-light">Update</button>
-                    </div>
-                </div>
-            </div>`;
+        <div class=" noteCard my-2 mx-2 card " style="width: 18rem;">
+    
+            <div class="card-body ">
+              <h5 class="card-title">${element.title}</h5>
+              <span class="pa">${element.text}</span>
+            
+            <div class=" mt-3 bottom-content">
+                <span>${element.date}</span>
+                <div class="operation ">
+                <td><li id="${index}" onclick="editNote(this.id)"><i class="fas fa-edit"></i></li></td>
+                 <td><li id="${index}" onclick="deleteNote(this.id)"><i class="fas fa-trash-alt"></i></li></td>
+                 </div>
+                    
+        
+            </div>
+          </div>
+
+        </div>`;
 
     });
     let notesElm = document.getElementById('notes');
@@ -62,6 +81,14 @@ function showNotes() {
     else {
         notesElm.innerHTML = 'Nothing to show! Use "Add a Note" section above to add notes.'
     }
+}
+function showMenu(elem) {
+    elem.parentElement.classList.add("show");
+    document.addEventListener("click", e => {
+        if(e.target.tagName != "I" || e.target != elem) {
+            elem.parentElement.classList.remove("show");
+        }
+    });
 }
 
 function deleteNote(index) {
@@ -81,6 +108,7 @@ function deleteNote(index) {
         showNotes();
     }
 }
+
 function editNote(index) {
    
     let notes = localStorage.getItem("notes");
@@ -93,11 +121,8 @@ function editNote(index) {
     else {
         notesObj = JSON.parse(notes);
     }
-    notesObj.findIndex((element, index) => {
-        //addTxt.value = element;
-        addTitle.value=element.title;
-        addTxt.value=element.text;
-    })
+    addTitle.value=notesObj[index].title;
+    addTxt.value=notesObj[index].text;
     notesObj.splice(index, 1);
     localStorage.setItem("notes", JSON.stringify(notesObj));
     showNotes();
@@ -105,15 +130,16 @@ function editNote(index) {
 }
 let search = document.getElementById('searchTxt');
 search.addEventListener("input", function () {
-    let inputVal = search.value.toLowerCase();
+    let inputVal = search.value;
    // .toLowerCase();
 
     //console.log('Input Event fired !',inputVal);
 
     let noteCards = document.getElementsByClassName('noteCard');
     Array.from(noteCards).forEach(function (element) {
-        let cardTxt = element.getElementsByTagName("p")[0].innerText;
-        if (cardTxt.includes(inputVal)) {
+        let cardTxt = element.getElementsByClassName("card-title")[0].innerText;
+        let cardTxt2 = element.getElementsByClassName("pa")[0].innerText;
+        if (cardTxt.includes(inputVal) || cardTxt2.includes(inputVal)) {
             element.style.display = "block";
         }
         else {
@@ -121,4 +147,3 @@ search.addEventListener("input", function () {
         }
     })
 })
-
