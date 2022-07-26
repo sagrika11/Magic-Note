@@ -21,7 +21,9 @@ addBtn.addEventListener("click", function (e) {
     let dateObj = new Date(),
     month = months[dateObj.getMonth()],
     day = dateObj.getDate(),
-    year = dateObj.getFullYear();
+    year = dateObj.getFullYear()
+    hour=dateObj.getHours();
+    min=dateObj.getMinutes();
     let notes = localStorage.getItem("notes");
     if (notes == null) {
         notesObj = [];
@@ -30,6 +32,7 @@ addBtn.addEventListener("click", function (e) {
         notesObj = JSON.parse(notes);
     }
     let myObj = {
+        
         title:addTitle.value,
         text:addTxt.value,
         date: `${month} ${day}, ${year}`,
@@ -54,10 +57,10 @@ function showNotes() {
     let html = "";
     notesObj.forEach(function (element, index) {
         html += `
-        <div class=" noteCard my-2 mx-2 card " style="width: 18rem;">
-    
-            <div class="card-body ">
-              <h5 class="card-title">${element.title}</h5>
+        <div class=" noteCard my-2 mx-2 card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
+          
+            <div class="card-body" >
+              <h5 class="card-title" style="font-weight:600;">${element.title}</h5>
               <span class="pa">${element.text}</span>
             
             <div class=" mt-3 bottom-content">
@@ -139,7 +142,7 @@ search.addEventListener("input", function () {
     Array.from(noteCards).forEach(function (element) {
         let cardTxt = element.getElementsByClassName("card-title")[0].innerText;
         let cardTxt2 = element.getElementsByClassName("pa")[0].innerText;
-        if (cardTxt.includes(inputVal) || cardTxt2.includes(inputVal)) {
+        if ( cardTxt2.includes(inputVal)||cardTxt.includes(inputVal)) {
             element.style.display = "block";
         }
         else {

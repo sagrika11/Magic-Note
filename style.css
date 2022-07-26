@@ -22,7 +22,7 @@ background-blend-mode: lighten;
 }
 .content .textBox h2
 {
-color:black;
+color:#212F3C;
 font-size: 4em;
 line-height: 1.5em;
 font-weight: 800;
@@ -39,7 +39,7 @@ text-transform: uppercase;
     display:inline-block;
     margin-bottom: 20px;
     padding: 8px 20px;
-    background: black;
+    background: #212F3C;
 
     color:white;
     border-radius: 40px;
@@ -71,7 +71,7 @@ text-transform: uppercase;
 }
 .contents .textBox h4
 {
-color:black;
+color:#212F3C;
 font-size: 4em;
 line-height: 1.5em;
 font-weight: 600;
@@ -88,7 +88,7 @@ text-transform: uppercase;
     display:inline-block;
     margin-bottom: 20px;
     padding: 8px 20px;
-    background: black;
+    background: #212F3C;
     color:white;
     border-radius: 74px;
     font-weight: 600;
@@ -110,13 +110,14 @@ font-weight: 500;
 {
   list-style: none;
   padding-top: 10px;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid rgb(179, 176, 176);
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
  
 }
+
 .bottom-content span{
     color: #6d6d6d;
     font-size: 15px;
@@ -139,21 +140,24 @@ font-weight: 500;
     font-size: 1rem;
     margin-left: 0.5rem;
   }
+  .butt:hover{
+  background: white;
+  }
   .fa-edit,
 .fa-trash-alt {
   color: #fff;
   padding: 10px;
-  background-color: #2ecc71;
+  background-color: #1E8449;
   border-radius: 50%;
 }
 
 .fa-trash-alt {
-  background-color: #e74c3c;
+  background-color: #D35400;
 }
 
 .fa-edit:hover {
   background-color: #fff;
-  color: #27ae60;
+  color: #145A32;
   filter: drop-shadow(0px 10px 8px rgb(219, 218, 218));
 }
 
@@ -161,4 +165,7 @@ font-weight: 500;
   background-color: #fff;
   color: #e74c3c;
   filter: drop-shadow(0px 10px 8px rgb(219, 218, 218));
+}
+#card-header-color {
+  background-color: #F4D03F;
 }

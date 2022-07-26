@@ -25,7 +25,7 @@
 
 <body">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning navbar sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light  navbar sticky-top" style="background:#F4D03F">
         <div class="container-fluid">
             <a class=" fw-bold navbar-brand fw-bold" href="#">Magic Notes</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -54,32 +54,32 @@
 
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" id="searchTxt" type="search" placeholder="Search"
+                    <input class="form-control me-2" id="searchTxt" type="search" placeholder="Add a Note"
                         aria-label="Search">
-                    <button class="btn btn-success" type="submit">Search</button>
+                    <button class="btn text-light " type="submit" style="background:#229954">Search</button>
                 </form>
             </div>
         </div>
     </nav>
     <div class="container my-3 "> 
         <h1 class="display-5 mb-4">Welcome To Magic Note</h1>
-        <div class="card">
-            <div class="card-body">
+        <div class="card shadow p-3 mb-5 bg-white rounded border-bottom">
+            <div class="card-body" >
                 <div class="mb-3">
                     <input type="email" class="form-control" id="addTitle" placeholder="Add Title">
                     <input type="hidden" id="saveindex">
                   </div>
                 <div class="form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="addTxt"
+                    <textarea class="form-control" placeholder="" id="addTxt"
                         style="height: 100px"></textarea>
                         <label for="floatingTextarea"></label>
                 </div>
-                <button class="btn btn-warning mt-3" id="addBtn">Add Note</button>
+                <button class="btn butt mt-3 bg-warning" style="border:none;" id="addBtn">Add Note</button>
                 
             </div>
         </div>
         <hr>
-        <h1 class="display-4">Yours Notes</h1>
+        <h6 class="display-5">Yours Notes</h6>
         <hr>
         <div id ="notes" class="row container-fluid">
            
