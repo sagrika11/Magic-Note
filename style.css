@@ -86,7 +86,7 @@ text-transform: uppercase;
 }
 .contents .textBox a{
     display:inline-block;
-    margin-bottom: 20px;
+    
     padding: 8px 20px;
     background: #212F3C;
     color:white;
@@ -97,6 +97,10 @@ text-transform: uppercase;
     text-transform: uppercase;
 
 }
+a{
+  margin-top: 20px;
+}
+
 
 #notes h5{
 font-size: 22px;
@@ -168,4 +172,17 @@ font-weight: 500;
 }
 #card-header-color {
   background-color: #F4D03F;
+}
+
+.noteCard{
+  width: 300px !important;
+  height: 400px !important;
+}
+.textDiv{
+  width: 235px !important;
+  height: 245px !important;
+  overflow-y: scroll;
+}
+.textDiv::-webkit-scrollbar{
+ display: none;
 }

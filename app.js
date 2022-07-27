@@ -61,7 +61,9 @@ function showNotes() {
           
             <div class="card-body" >
               <h5 class="card-title" style="font-weight:600;">${element.title}</h5>
+              <div class="textDiv">
               <span class="pa">${element.text}</span>
+                </div>
             
             <div class=" mt-3 bottom-content">
                 <span>${element.date}</span>
