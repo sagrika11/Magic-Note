@@ -135,7 +135,7 @@ function editNote(index) {
 }
 let search = document.getElementById('searchTxt');
 search.addEventListener("input", function () {
-    let inputVal = search.value;
+    let inputVal = search.value.toLowerCase();
    // .toLowerCase();
 
     //console.log('Input Event fired !',inputVal);

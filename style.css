@@ -86,7 +86,6 @@ text-transform: uppercase;
 }
 .contents .textBox a{
     display:inline-block;
-    
     padding: 8px 20px;
     background: #212F3C;
     color:white;
@@ -100,7 +99,9 @@ text-transform: uppercase;
 a{
   margin-top: 20px;
 }
-
+.fi{
+  margin-right: 10px;
+}
 
 #notes h5{
 font-size: 22px;
